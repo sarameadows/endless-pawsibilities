@@ -2,7 +2,8 @@ const {Model, DataTypes} = require('sequelize');
 const sequelize = require('../config/connection');
 
 // need to include:
-// - way to remove any dashes or parentheses from a phone number before it reaches the db
+// way to remove any dashes or parentheses from a phone number before it reaches the db
+// that ^ probably goes in frontend js or the controllers
 
 class Foster extends Model {};
 
@@ -39,6 +40,7 @@ Foster.init(
                 len: [10, 10]
             }
         },
+        // no foreign key connection because both tables require emails to be unique
         is_employee: {
             type: DataTypes.BOOLEAN,
             allowNull: false,
