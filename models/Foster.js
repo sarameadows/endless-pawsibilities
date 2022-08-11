@@ -39,7 +39,7 @@ Foster.init(
                 len: [10, 10]
             }
         },
-        is_staff: {
+        is_employee: {
             type: DataTypes.BOOLEAN,
             allowNull: false,
             default: 0
