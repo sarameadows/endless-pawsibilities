@@ -38,6 +38,11 @@ Foster.init(
                 // requires int to be 10 digits long
                 len: [10, 10]
             }
+        },
+        is_staff: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            default: 0
         }
     },
     {

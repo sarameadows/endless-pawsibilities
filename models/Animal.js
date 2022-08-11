@@ -18,11 +18,26 @@ Animal.init(
         },
         species: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            // setting out some basic categories, can edit this later
+            validate: {
+                isIn: [['dog', 'cat', 'rabbit', 'small pet']]
+            }
         },
         age: {
             type: DataTypes.INTEGER,
             allowNull: false
+        },
+        weight: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
+        good_with: {
+            type: DataTypes.STRING(4),
+            allowNull: true,
+            validate: {
+                isIn: [['kids', 'cats', 'dogs', '']]
+            }
         },
         // animal needs special healthcare or has behavioral issues
         special_needs: {
@@ -30,10 +45,13 @@ Animal.init(
             allowNull: false,
             default: 0
         },
-        with_foster: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
-            default: 0
+        foster_id: {
+            type: DataTypes.INTEGER,
+            allowNull: true,
+            references: {
+                model: Foster,
+                key: 'id'
+            }
         }
     },
     {
