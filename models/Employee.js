@@ -33,13 +33,15 @@ Employee.init(
             }
         },
         phone: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: true,
             unique: true,
-            validate: {
-                // requires int to be 10 digits long
-                len: [10, 10]
-            }
+            // meant to check that the value matches this format:
+            // xxx-xxx-xxxx
+            // unsure why it doesnt work
+            // validate: {
+            //     is: /d{3}-d{3}-d{4}/
+            // }
         }
     },
     {

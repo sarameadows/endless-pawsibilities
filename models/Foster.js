@@ -1,10 +1,6 @@
 const {Model, DataTypes} = require('sequelize');
 const sequelize = require('../config/connection');
 
-// need to include:
-// way to remove any dashes or parentheses from a phone number before it reaches the db
-// that ^ probably goes in frontend js or the controllers
-
 class Foster extends Model {};
 
 Foster.init(
@@ -32,13 +28,15 @@ Foster.init(
             }
         },
         phone: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: true,
-            unique: true,
-            validate: {
-                // requires int to be 10 digits long
-                len: [10, 10]
-            }
+            unique: true
+            // meant to check that the value matches this format:
+            // xxx-xxx-xxxx
+            // unsure why it doesnt work
+            // validate: {
+            //     is: /d{3}-d{3}-d{4}/
+            // }
         },
         // no foreign key connection because both tables require emails to be unique
         is_employee: {

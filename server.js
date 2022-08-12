@@ -7,8 +7,14 @@ const PORT = process.env.PORT || 3001;
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-sequelize.sync({force: false}).then(() => {
+// unsure why but i need this and the .findAll() call below to make the tables actually generate in my local db
+// can remove these once the routes are set up, im pretty sure
+const {Animal} = require('./models');
+
+sequelize.sync({force: true}).then(() => {
     app.listen(PORT, () => {
         console.log('http://localhost:' + PORT)
     });
+
+    Animal.findAll().then(dbAnimalData => console.log(dbAnimalData));
 });

@@ -24,21 +24,23 @@ Animal.init(
                 isIn: [['dog', 'cat', 'rabbit', 'small pet']]
             }
         },
+        // years
         age: {
             type: DataTypes.INTEGER,
             allowNull: false
         },
+        // pounds
         weight: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.DECIMAL,
             allowNull: false,
         },
-        good_with: {
-            type: DataTypes.STRING(4),
-            allowNull: true,
-            validate: {
-                isIn: [['kids', 'cats', 'dogs', '']]
-            }
-        },
+        // good_with: {
+        //     type: DataTypes.STRING(4),
+        //     allowNull: true,
+        //     validate: {
+        //         isIn: [['kids', 'cats', 'dogs', '']]
+        //     }
+        // },
         // animal needs special healthcare or has behavioral issues
         special_needs: {
             type: DataTypes.BOOLEAN,
@@ -57,7 +59,7 @@ Animal.init(
     {
         sequelize,
         timestamps: false,
-        freezeTableName: false,
+        freezeTableName: true,
         underscored: true,
         modelName: 'animal'
     }
