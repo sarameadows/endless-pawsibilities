@@ -7,21 +7,22 @@ router.post('/', (req, res) => {
       username: req.body.username,
       email: req.body.email,
       phone: req.body.phone,
-      password: req.body.password
+      password: req.body.password,
+      
   })
-      .then(dbUserData => {
-          req.session.save(() => {
-              req.session.user_id = dbUserData.id;
-              req.session.username = dbUserData.username;
-              req.session.loggedIn = true;
+    .then(dbEmployeeData => {
+        //   req.session.save(() => {
+        //       req.session.user_id = dbEmployeeData.id;
+        //       req.session.username = dbEmployeeData.username;
+        //       req.session.loggedIn = true;
 
-              res.json(dbUserData);
+              res.json(dbEmployeeData);
       })
       .catch(err => {
           console.log(err);
           res.status(500).json(err);
       });
-  });
+    // });
 });
 
 // route to login an employee
@@ -30,14 +31,14 @@ router.post('/login', (req, res) => {
       where: {
           username: req.body.username
       }
-  }).then(dbUserData => {
-      if(!dbUserData) {
+  }).then(dbEmployeeData => {
+      if(!dbEmployeeData) {
           res.status(400).json({message: 'No user with that email address'});
           return;
       }
 
       // verify password
-      const validPassword = dbUserData.checkPassword(req.body.password);
+      const validPassword = dbEmployeeData.checkPassword(req.body.password);
       if (!validPassword) {
           res.status(400).json({message: 'Incorrect password'});
           return;
@@ -45,11 +46,11 @@ router.post('/login', (req, res) => {
 
       req.session.save(() => {
           // session variables
-          req.session.user_id = dbUserData.id;
-          req.session.username = dbUserData.username;
+          req.session.user_id = dbEmployeeData.id;
+          req.session.username = dbEmployeeData.username;
           req.session.loggedIn = true;
 
-          res.json({ user: dbUserData, message: 'You are now logged in!'});
+          res.json({ user: dbEmployeeData, message: 'You are now logged in!'});
       })
   });
 });
