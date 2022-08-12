@@ -11,11 +11,10 @@ app.use(express.urlencoded({extended: true}));
 // can remove these once the routes are set up, im pretty sure
 const {Animal} = require('./models');
 
-sequelize.sync({force: false}).then(() => {
+sequelize.sync({force: true}).then(() => {
     app.listen(PORT, () => {
         console.log('http://localhost:' + PORT)
     });
 
-    // unsure why but i need this and the 
     Animal.findAll().then(dbAnimalData => console.log(dbAnimalData));
 });
