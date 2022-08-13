@@ -17,7 +17,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // can remove these once the routes are set up, im pretty sure
 const {Animal} = require('./models');
 
-sequelize.sync({force: false}).then(() => {
+sequelize.sync({force: false }).then(() => {
     app.listen(PORT, () => {
         console.log('http://localhost:' + PORT)
     });
