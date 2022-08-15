@@ -18,9 +18,12 @@ async function signupFormHandler(event) {
   
       // check the response status
       if (response.ok) {
-        console.log('success');
+        alert('You\'re signed up! You can now use your account. Redirecting to the homepage...');
+        setTimeout(() => {
+          document.location.replace('/');
+        }, 1500);
       } else {
-        alert(response.statusText);
+        alert('Error: ' + response.statusText);
       }
     }
   }
@@ -44,10 +47,12 @@ async function loginFormHandler(event) {
       });
   
       if (response.ok) {
-        document.location.replace('/');
-        console.log('logged in');
+        alert('You\'re logged in! Redirecting to the homepage...');
+        setTimeout(() => {
+          document.location.replace('/');
+        }, 1500);
       } else {
-        alert(response.statusText);
+        alert('Error: ' + response.statusText);
       }
     }
   }
