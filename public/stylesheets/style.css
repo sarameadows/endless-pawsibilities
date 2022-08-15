@@ -36,7 +36,7 @@
     background-color: #4fee05;
   }
   
-  .post-list {
+  .animal-list {
     margin: 0;
     padding: 0;
   }
@@ -117,7 +117,7 @@
     background-color: #ff643d;
   }
   
-  .post {
+  .animal {
     margin-bottom: 2%;
     line-height: 150%;
   }
