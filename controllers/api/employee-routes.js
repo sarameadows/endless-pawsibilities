@@ -6,9 +6,8 @@ router.post('/', (req, res) => {
   Employee.create({
       username: req.body.username,
       email: req.body.email,
-      phone: req.body.phone,
+    //   phone: req.body.phone,
       password: req.body.password,
-      
   })
     .then(dbEmployeeData => {
           req.session.save(() => {
@@ -17,12 +16,12 @@ router.post('/', (req, res) => {
               req.session.loggedIn = true;
 
               res.json(dbEmployeeData);
+            });
       })
       .catch(err => {
           console.log(err);
           res.status(500).json(err);
       });
-     });
 });
 
 // route to login an employee
@@ -55,6 +54,7 @@ router.post('/login', (req, res) => {
       })
   });
 });
+
 //logout
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
