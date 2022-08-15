@@ -6,12 +6,12 @@ const Foster = require('./Foster');
 // one animal can only be fostered by one person (at once)
 Animal.belongsTo(Foster, {
     foreignKey: 'foster_id',
-    onDelete: 'set null'
+    onDelete: 'SET NULL'
 });
 
 Foster.hasMany(Animal, {
     foreignKey: 'foster_id',
-    onDelete: 'set null'
+    onDelete: 'SET NULL'
 });
 
 module.exports = {
