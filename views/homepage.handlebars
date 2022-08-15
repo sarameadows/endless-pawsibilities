@@ -1,11 +1,18 @@
 <ol class="animal-list">
     {{#each animals as |animal|}}
     <li>
+        {{!-- tried to put icons based on species, but this if didn't work --}}
+        {{!-- {{#if species= 'dog'}}
+        <i class="fa-solid fa-dog"></i>
+        {{/if}}
+        {{#if species= 'cat'}}
+        <i class="fa-solid fa-cat"></i>
+        {{/if}} --}}
         <div>
-
+            {{name}} is a {{weight}} lb. {{species}}.
         </div>
         <div>
-
+            
         </div>
     </li>
     {{/each}}
