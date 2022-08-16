@@ -5,8 +5,10 @@ async function logout() {
     });
   
     if (response.ok) {
-      alert('You are now logged out.');
+      alert('You are now logged out. The page will reload when you close this alert.');
+      window.location.reload();
     } else {
+        // no message extraction - no message to get
       alert('Error: ' + response.statusText);
     }
   }

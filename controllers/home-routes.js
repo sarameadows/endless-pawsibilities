@@ -23,7 +23,7 @@ router.get('/', (req, res) => {
       .then(dbAnimalData => {
         const animals = dbAnimalData.map(animal => animal.get({ plain: true }));
   
-        res.render('homepage', { animals });
+        res.render('homepage', { animals, loggedIn: req.session.loggedIn });
       })
       .catch(err => {
         console.log(err);
@@ -38,6 +38,6 @@ router.get('/login', (req, res) => {
       return;
     }
     
-    res.render('login');
+    res.render('login', { loggedIn: req.session.loggedIn });
 });
 module.exports = router;

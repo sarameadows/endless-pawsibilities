@@ -5,7 +5,6 @@ const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const sequelize = require('./config/connection');
 const sess = {
-  //replace secret with actual secret stored in .env
   secret: process.env.SECRET,
   cookie: {},
   resave: false,

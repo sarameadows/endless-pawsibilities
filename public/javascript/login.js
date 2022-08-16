@@ -21,9 +21,12 @@ async function signupFormHandler(event) {
         alert('You\'re signed up! You can now use your account. Redirecting to the homepage...');
         setTimeout(() => {
           document.location.replace('/');
-        }, 1500);
+        }, 1000);
       } else {
-        alert('Error: ' + response.statusText);
+        // getting the message defined in employee-routes out of the response
+        // using await to get the <value> out of it, then destructuring out the message property
+        const {message} = await response.json();
+        alert('Error: ' + message);
       }
     }
   }
@@ -50,9 +53,12 @@ async function loginFormHandler(event) {
         alert('You\'re logged in! Redirecting to the homepage...');
         setTimeout(() => {
           document.location.replace('/');
-        }, 1500);
+        }, 1000);
       } else {
-        alert('Error: ' + response.statusText);
+        // getting the message defined in employee-routes out of the response
+        // using await to get the <value> out of it, then destructuring out the message property
+        const {message} = await response.json();
+        alert('Error: ' + message);
       }
     }
   }

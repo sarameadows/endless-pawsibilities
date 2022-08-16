@@ -42,7 +42,7 @@ router.post('/login', (req, res) => {
       if (!validPassword) {
           res.status(400).json({message: 'Incorrect password'});
           return;
-      }
+      };
 
       req.session.save(() => {
           // session variables
