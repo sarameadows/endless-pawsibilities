@@ -14,7 +14,7 @@
     text-decoration: none;
     color: #5ca322;
     font-weight: bold;
-    transition: color .1s;
+    transition: color .1s ease-in-out;
   }
   
   a:hover {
@@ -100,7 +100,7 @@
     color: #5ca322;
     font-size: 100%;
     font-weight: bold;
-    transition: color .1s;
+    transition: color .1s ease-in-out;
     margin-left: 16px;
   }
   
@@ -108,18 +108,48 @@
     background: none;
     color: #4fee05;
   }
-  
-  .delete-post-btn {
-    background-color: #d41414;
-  }
-  
-  .delete-post-btn:hover {
-    background-color: #ff643d;
+
+  .animal-list {
+    list-style: none;
+    display: flex; flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1.5rem 1rem;
   }
   
   .animal {
-    margin-bottom: 2%;
-    line-height: 150%;
+    background: #e0e0e0;
+    flex: 1 20rem;
+    padding: 1rem;
+    border-radius: 20px;
+  }
+
+  .animal * {
+    margin: 0; padding: 0;
+  }
+  
+  .animal-header, .animal-info {
+    margin-bottom: 1.5rem;
+  }
+
+  .animal p {
+    margin-right: 1rem;
+  }
+
+  .animal-header {
+    background: #689543;
+    color: white;
+    margin: -1rem -1rem 1rem;
+    padding: 1rem;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .animal-info {
+    display: flex;
+  }
+
+  .animal-foster-info {
+    color: #5ca322;
+    font-weight: bold;
   }
   
   .post .title span {
@@ -131,34 +161,6 @@
   .edit-link {
     display: block;
     margin: -1.5% 0 2% 0;
-  }
-  
-  .upvote-btn {
-    background-color: #197d0f;
-    transition: background-color .1s;
-  }
-  
-  .upvote-btn:hover {
-    background-color: #1f9c13;
-  }
-  
-  .comment-form {
-    margin-bottom: 5%;
-  }
-  
-  .comment {
-    padding: 1%;
-    margin-bottom: 1%;
-  }
-  
-  .comment:nth-child(odd) {
-    background-color: #fff5eb;
-  }
-  
-  .comment .meta {
-    font-size: 90%;
-    margin-bottom: .5%;
-    opacity: .6;
   }
   
   .new-post-form input {
