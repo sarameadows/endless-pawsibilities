@@ -152,13 +152,29 @@
     font-weight: bold;
   }
   
-  .post .title span {
+  footer {
+    border-top: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    padding: 1%;
+    font-size: 110%;
+  }
+  .update-form {
+    background: #e0e0e0;
+    flex: 1 20rem;
+    padding: 1rem;
+    border-radius: 20px;
+    margin-top: 2em;
+  }
+
+  /* commented out this css we don't use */
+    /* .post .title span {
     font-style: italic;
     font-size: 90%;
     color: #7d7d7d;
-  }
+  } */
   
-  .edit-link {
+  /* .edit-link {
     display: block;
     margin: -1.5% 0 2% 0;
   }
@@ -169,12 +185,4 @@
   
   .edit-post-form {
     margin-bottom: 5%;
-  }
-  
-  footer {
-    border-top: 1px solid #ccc;
-    display: flex;
-    justify-content: center;
-    padding: 1%;
-    font-size: 110%;
-  }
+  } */
