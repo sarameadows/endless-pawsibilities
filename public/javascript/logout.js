@@ -1,13 +1,15 @@
 async function logout() {
-    const response = await fetch('/api/users/logout', {
+    const response = await fetch('/api/employees/logout', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' }
     });
   
     if (response.ok) {
-      document.location.replace('/');
+      alert('You are now logged out. The page will reload when you close this alert.');
+      window.location.reload();
     } else {
-      alert(response.statusText);
+        // no message extraction - no message to get
+      alert('Error: ' + response.statusText);
     }
   }
   

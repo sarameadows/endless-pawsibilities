@@ -22,8 +22,8 @@ router.get('/', (req, res) => {
     })
       .then(dbAnimalData => {
         const animals = dbAnimalData.map(animal => animal.get({ plain: true }));
-  
-        res.render('homepage', { animals, loggedIn: req.session.loggedIn} );
+
+        res.render('homepage', { animals, loggedIn: req.session.loggedIn });
       })
       .catch(err => {
         console.log(err);
@@ -34,10 +34,10 @@ router.get('/', (req, res) => {
   //login route
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
-      res.redirect('/dashboard');
+      res.redirect('/');
       return;
     }
     
-    res.render('login');
+    res.render('login', { loggedIn: req.session.loggedIn });
 });
 module.exports = router;

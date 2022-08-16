@@ -1,19 +1,28 @@
-<ol class="animal-list">
-    {{#each animals as |animal|}}
-    <li>
-        {{!-- tried to put icons based on species, but this if didn't work --}}
-        {{!-- {{#if species= 'dog'}}
-        <i class="fa-solid fa-dog"></i>
-        {{/if}}
-        {{#if species= 'cat'}}
-        <i class="fa-solid fa-cat"></i>
-        {{/if}} --}}
-        <div>
-            {{name}} is a {{weight}} lb. {{species}}.
+{{!-- no species icons because almost all fontawesome's animal icons are pro-only --}}
+<ul class="animal-list">
+    {{#each animals}}
+    <li class="animal">
+        <div class="animal-header">
+            <h3>{{name}}</h3>
         </div>
-        <div>
+
+        <div class="animal-info">
+            <p>{{capitalize species}}</p>
+
+            <p>{{age}} years old</p>
+
+            <p>{{weight}} lb.</p>
+        </div>
+
+        <div class="animal-foster-info">
+            {{#if foster_id}}
+            <p>With foster</p>
+            {{/if}}
             
+            {{#if special_needs}}
+            <p>Needs special care</p>
+            {{/if}}
         </div>
     </li>
     {{/each}}
-</ol>
+</ul>

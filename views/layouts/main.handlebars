@@ -16,8 +16,11 @@
       <i class="fa-solid fa-paw"></i><a href="/">   Endless Pawsibilities   </a><i class="fa-solid fa-paw"></i>
     </h1>
     <nav>
-      <a href="/login">login</a>
-       <button id="logout" class="btn-no-style">logout</button>
+        {{#if loggedIn}}
+        <button id="logout" class="btn-no-style">logout</button>
+        {{else}}
+        <a href="/login">login</a>
+        {{/if}}
     </nav>
   </header>
   
