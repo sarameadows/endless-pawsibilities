@@ -32,26 +32,28 @@
       <div>
         <form class="update-form">
           <h3 class="animal-header">
-            Animal Form
+            Add New Animal
           </h3>
           <div>
-            <label for="name-update">name:</label>
+            <label for="name-update">Name:</label>
             <input type="text" id="name-update" />
 
-            <label for="species-update">species:</label>
-            <input type="text" id="species-update" />
+            <label for="species-update">Species:</label>
+            <select id="species-update">
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+                <option value="rabbit">Rabbit</option>
+                <option value="small pet">Small Pet</option>
+            </select>
 
-            <label for="age-update">age:</label>
+            <label for="age-update">Age (years):</label>
             <input type="number" id="age-update" />
 
-            <label for="weight-update">weight:</label>
+            <label for="weight-update">Weight (pounds):</label>
             <input type="number" id="weight-update" />
 
-            <label for="special-update">special needs:</label>
+            <label for="special-update">Special needs:</label>
             <input type="checkbox" id="special-update" />
-
-            {{!-- <label for="foster-update">foster id:</label>
-            <input type="number" id="foster-update" /> --}}
           </div>
           <div>
             <button type="submit">add animal</button>
