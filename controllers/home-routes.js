@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
     })
       .then(dbAnimalData => {
         const animals = dbAnimalData.map(animal => animal.get({ plain: true }));
-  
+
         res.render('homepage', { animals, loggedIn: req.session.loggedIn });
       })
       .catch(err => {
