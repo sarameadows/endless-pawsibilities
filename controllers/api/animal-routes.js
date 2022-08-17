@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const sequelize = require('../../config/connection');
 const { Animal, Foster } = require('../../models');
+const withAuth = require('../../utils/withAuth');
 
 
 // get all animals
@@ -23,7 +23,7 @@ router.get('/', (req, res) => {
 });
 
 // create an animal
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
   Animal.create({
       name: req.body.name,
       species: req.body.species,
