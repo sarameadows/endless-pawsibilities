@@ -1,0 +1,174 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    color: #333;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #5ca322;
+    font-weight: bold;
+    transition: color .1s ease-in-out;
+  }
+  
+  a:hover {
+    color: #4fee05;
+  }
+  
+  button {
+    background-color: #5ca322;
+    border: 0;
+    padding: 1%;
+    color: white;
+    font-weight: bold;
+    transition: background-color .1s;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #4fee05;
+  }
+  
+  .animal-list {
+    margin: 0;
+    padding: 0;
+  }
+  
+  textarea, input, select {
+    padding: .5%;
+    margin-bottom: .5%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  textarea:focus, input:focus {
+    outline: none;
+    border: 1px solid #5ca322;
+  }
+  
+  textarea {
+    min-width: 40%;
+    min-height: 100px;
+  }
+
+  select {
+    width: 150px;
+    background: white;
+  }
+  
+  form > div {
+    margin-bottom: 2%;
+  }
+  
+  form label {
+    display: block;
+  }
+  
+  .wrapper {
+    width: 100%;
+    min-height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  header {
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1%;
+  }
+  
+  header h1 {
+    font-size: 2em;
+  }
+  
+  main {
+    flex: 1;
+    padding: 2% 4%;
+  }
+  
+  .btn-no-style {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: none;
+    color: #5ca322;
+    font-size: 100%;
+    font-weight: bold;
+    transition: color .1s ease-in-out;
+    margin-left: 16px;
+  }
+  
+  .btn-no-style:hover {
+    background: none;
+    color: #4fee05;
+  }
+
+  .animal-list {
+    list-style: none;
+    display: flex; flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1.5rem 1rem;
+  }
+  
+  .animal {
+    background: #e0e0e0;
+    flex: 1 20rem;
+    padding: 1rem;
+    border-radius: 20px;
+  }
+
+  .animal * {
+    margin: 0; padding: 0;
+  }
+  
+  .animal-header, .animal-info {
+    margin-bottom: 1.5rem;
+  }
+
+  .animal p {
+    margin-right: 1rem;
+  }
+
+  .animal-header {
+    background: #689543;
+    color: white;
+    margin: -1rem -1rem 1rem;
+    padding: 1rem;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .animal-info {
+    display: flex;
+  }
+
+  .animal-foster-info {
+    color: #5ca322;
+    font-weight: bold;
+  }
+  
+  footer {
+    border-top: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    padding: 1%;
+    font-size: 110%;
+  }
+  .update-form {
+    background: #e0e0e0;
+    flex: 1 20rem;
+    padding: 1rem;
+    border-radius: 20px;
+    margin-top: 2em;
+  }
