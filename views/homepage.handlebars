@@ -26,3 +26,38 @@
     </li>
     {{/each}}
 </ul>
+
+<div>
+    {{#if loggedIn}}
+      <div>
+        <form class="update-form">
+          <h3 class="animal-header">
+            Animal Form
+          </h3>
+          <div>
+            <label for="name-update">name:</label>
+            <input type="text" id="name-update" />
+
+            <label for="species-update">species:</label>
+            <input type="text" id="species-update" />
+
+            <label for="age-update">age:</label>
+            <input type="number" id="age-update" />
+
+            <label for="weight-update">weight:</label>
+            <input type="number" id="weight-update" />
+
+            <label for="special-update">special needs:</label>
+            <input type="checkbox" id="special-update" />
+
+            {{!-- <label for="foster-update">foster id:</label>
+            <input type="number" id="foster-update" /> --}}
+          </div>
+          <div>
+            <button type="submit">add animal</button>
+          </div>
+        </form>
+      </div>
+    <script src="/javascript/update.js"></script>
+    {{/if}}
+</div>
