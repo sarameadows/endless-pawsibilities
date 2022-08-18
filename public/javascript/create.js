@@ -6,7 +6,7 @@ async function newAnimalFormHandler(event) {
     const age = document.querySelector('#age-create').value;
     const weight = document.querySelector('#weight-create').value;
     const special_needs = document.querySelector('#special-create').checked;
-    console.log(special_needs);
+    
     const response = await fetch(`/api/animals`, {
         method: 'POST',
         body: JSON.stringify({
