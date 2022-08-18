@@ -1,11 +1,11 @@
 async function newAnimalFormHandler(event) {
     event.preventDefault();
 
-    const name = document.querySelector('#name-update').value;
-    const species = document.querySelector('#species-update').value;
-    const age = document.querySelector('#age-update').value;
-    const weight = document.querySelector('#weight-update').value;
-    const special_needs = document.querySelector('#special-update').checked;
+    const name = document.querySelector('#name-add').value;
+    const species = document.querySelector('#species-add').value;
+    const age = document.querySelector('#age-add').value;
+    const weight = document.querySelector('#weight-add').value;
+    const special_needs = document.querySelector('#special-add').checked;
     console.log(special_needs);
     const response = await fetch(`/api/animals`, {
         method: 'POST',
@@ -29,4 +29,4 @@ async function newAnimalFormHandler(event) {
 }
 
 //event listener for add animal form
-document.querySelector(".update-form").addEventListener('submit', newAnimalFormHandler);
+document.querySelector(".add-form").addEventListener('submit', newAnimalFormHandler);

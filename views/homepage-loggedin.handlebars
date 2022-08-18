@@ -9,7 +9,6 @@
                 <button class="animal-btn" type="button">
                     <a href="/edit/{{id}}">Edit</a>
                 </button>
-                <button class="animal-btn" type="button">Delete</button>
             </div>
         </div>
 
@@ -36,35 +35,35 @@
 
 <div>
       <div>
-        <form class="update-form">
+        <form class="add-form">
           <h3 class="animal-header">
             Add New Animal
           </h3>
           <div>
-            <label for="name-update">Name:</label>
-            <input type="text" id="name-update" />
+            <label for="name-add">Name:</label>
+            <input type="text" id="name-add" />
 
-            <label for="species-update">Species:</label>
-            <select id="species-update">
+            <label for="species-add">Species:</label>
+            <select id="species-add">
                 <option value="dog">Dog</option>
                 <option value="cat">Cat</option>
                 <option value="rabbit">Rabbit</option>
                 <option value="small pet">Small Pet</option>
             </select>
 
-            <label for="age-update">Age (years):</label>
-            <input type="number" id="age-update" />
+            <label for="age-add">Age (years):</label>
+            <input type="number" id="age-add" />
 
-            <label for="weight-update">Weight (pounds):</label>
-            <input type="number" id="weight-update" />
+            <label for="weight-add">Weight (pounds):</label>
+            <input type="number" id="weight-add" />
 
-            <label for="special-update">Special needs:</label>
-            <input type="checkbox" id="special-update" />
+            <label for="special-add">Special needs:</label>
+            <input type="checkbox" id="special-add" />
           </div>
           <div>
-            <button type="submit">add animal</button>
+            <button type="add">add animal</button>
           </div>
         </form>
       </div>
-    <script src="/javascript/update.js"></script>
+    <script src="/javascript/add.js"></script>
 </div>
