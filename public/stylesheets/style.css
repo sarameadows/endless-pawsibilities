@@ -149,6 +149,10 @@
     border-radius: 20px 20px 0 0;
   }
 
+  .animal-header h3 {
+    margin-bottom: 0.2rem;
+  }
+
   .animal-info {
     display: flex;
   }
@@ -156,6 +160,11 @@
   .animal-foster-info {
     color: #5ca322;
     font-weight: bold;
+  }
+
+  .animal-btn {
+    padding: 0.2rem;
+    background: none;
   }
   
   footer {

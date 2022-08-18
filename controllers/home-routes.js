@@ -23,7 +23,12 @@ router.get('/', (req, res) => {
       .then(dbAnimalData => {
         const animals = dbAnimalData.map(animal => animal.get({ plain: true }));
 
-        res.render('homepage', { animals, loggedIn: req.session.loggedIn });
+        // two different templates - couldnt access the loggedIn property from within the animals list
+        if (req.session.loggedIn) {
+            res.render('homepage-loggedin', { animals });
+        } else {
+            res.render('homepage', { animals });
+        }
       })
       .catch(err => {
         console.log(err);
