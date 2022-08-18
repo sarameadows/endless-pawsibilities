@@ -25,9 +25,9 @@ router.get('/', (req, res) => {
 
         // two different templates - couldnt access the loggedIn property from within the animals list
         if (req.session.loggedIn) {
-            res.render('homepage-loggedin', { animals });
+            res.render('homepage-loggedin', { animals, loggedIn: req.session.loggedIn });
         } else {
-            res.render('homepage', { animals });
+            res.render('homepage', { animals, loggedIn: req.session.loggedIn });
         }
       })
       .catch(err => {
