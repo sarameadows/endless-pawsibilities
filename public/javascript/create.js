@@ -1,7 +1,7 @@
 async function newAnimalFormHandler(event) {
     event.preventDefault();
 
-    const name = document.querySelector('#name-create').value;
+    const name = document.querySelector('#name-create').value.trim();
     const species = document.querySelector('#species-create').value;
     const age = document.querySelector('#age-create').value;
     const weight = document.querySelector('#weight-create').value;
