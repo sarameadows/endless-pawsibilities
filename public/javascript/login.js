@@ -18,10 +18,8 @@ async function signupFormHandler(event) {
   
       // check the response status
       if (response.ok) {
-        alert('You\'re signed up! You can now use your account. Redirecting to the homepage...');
-        setTimeout(() => {
-          document.location.replace('/');
-        }, 1000);
+        alert('You\'re signed up! You can now use your account. Closing this alert will send you to the homepage.');
+        document.location.replace('/');
       } else {
         // getting the message defined in employee-routes out of the response
         // using await to get the <value> out of it, then destructuring out the message property
@@ -50,10 +48,8 @@ async function loginFormHandler(event) {
       });
   
       if (response.ok) {
-        alert('You\'re logged in! Redirecting to the homepage...');
-        setTimeout(() => {
-          document.location.replace('/');
-        }, 1000);
+        alert('You\'re logged in! Closing this alert will send you to the homepage.');
+        document.location.replace('/');
       } else {
         // getting the message defined in employee-routes out of the response
         // using await to get the <value> out of it, then destructuring out the message property
