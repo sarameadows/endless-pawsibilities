@@ -23,7 +23,12 @@ router.get('/', (req, res) => {
       .then(dbAnimalData => {
         const animals = dbAnimalData.map(animal => animal.get({ plain: true }));
 
-        res.render('homepage', { animals, loggedIn: req.session.loggedIn });
+        // two different templates - couldnt access the loggedIn property from within the animals list
+        if (req.session.loggedIn) {
+            res.render('homepage-loggedin', { animals, loggedIn: req.session.loggedIn });
+        } else {
+            res.render('homepage', { animals, loggedIn: req.session.loggedIn });
+        }
       })
       .catch(err => {
         console.log(err);
@@ -40,4 +45,24 @@ router.get('/login', (req, res) => {
     
     res.render('login', { loggedIn: req.session.loggedIn });
 });
+
+// edit route
+router.get('/edit/:id', (req, res) => {
+    Animal.findOne({
+        where: {
+            id: req.params.id
+        }
+    })
+    .then(dbAnimalData => {
+        if (!dbAnimalData) {
+            res.status(404).json({message: 'No animal with this ID was found.'});
+        } else {
+            const animal = dbAnimalData.get({plain: true});
+
+            res.render('edit', { animal, loggedIn: req.session.loggedIn })
+        }
+    })
+})
+
+
 module.exports = router;

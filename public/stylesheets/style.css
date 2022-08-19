@@ -153,6 +153,10 @@
     border-radius: 20px 20px 0 0;
   }
 
+  .animal-header h3 {
+    margin-bottom: 0.2rem;
+  }
+
   .animal-info {
     display: flex;
   }
@@ -160,6 +164,15 @@
   .animal-foster-info {
     color: #5ca322;
     font-weight: bold;
+  }
+
+  .animal-btn {
+    padding: 0.2rem;
+    background: none;
+  }
+
+  .animal-btn a {
+    color: white;
   }
   
   footer {
@@ -170,7 +183,7 @@
     padding: 1%;
     font-size: 110%;
   }
-  .update-form {
+  .create-form {
     background: #e0e0e0;
     flex: 1 20rem;
     padding: 1rem;

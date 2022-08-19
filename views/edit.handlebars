@@ -1,0 +1,33 @@
+{{#with animal}}
+<form id="edit-form" class="create-form">
+    <div>
+        <label for="name-edit">Name:</label>
+        <input type="text" id="name-edit" value="{{name}}" />
+    </div>
+
+    <div>
+        <label for="age-edit">Age (years):</label>
+        <input type="number" id="age-edit" value="{{age}}" />
+    </div>
+
+    <div>
+        <label for="weight-edit">Weight (pounds):</label>
+        <input type="number" id="weight-edit" value="{{weight}}" />
+    </div>
+
+    <div>
+        <label for="special-edit">Special needs:</label>
+        {{#if special_needs}}
+        <input type="checkbox" id="special-edit" checked />
+        {{else}}
+        <input type="checkbox" id="special-edit" />
+        {{/if}}
+    </div>
+
+    <div>
+        <button type="submit">update animal</button>
+    </div>
+</form>
+{{/with}}
+
+<script src="/javascript/update.js"></script>
