@@ -1,17 +1,18 @@
-async function newAnimalFormHandler(event) {
+async function editAnimalFormHandler(event) {
     event.preventDefault();
 
-    const name = document.querySelector('#name-update').value;
-    const species = document.querySelector('#species-update').value;
-    const age = document.querySelector('#age-update').value;
-    const weight = document.querySelector('#weight-update').value;
-    const special_needs = document.querySelector('#special-update').checked;
-    console.log(special_needs);
-    const response = await fetch(`/api/animals`, {
-        method: 'POST',
+    const urlArray = document.location.toString().split('/');
+    const id = urlArray[urlArray.length - 1];
+
+    const name = document.querySelector('#name-edit').value.trim();
+    const age = document.querySelector('#age-edit').value;
+    const weight = document.querySelector('#weight-edit').value;
+    const special_needs = document.querySelector('#special-edit').checked;
+    
+    const response = await fetch('/api/animals/' + id, {
+        method: 'PUT',
         body: JSON.stringify({
             name,
-            species,
             age,
             weight,
             special_needs
@@ -21,12 +22,13 @@ async function newAnimalFormHandler(event) {
         }
     });
 
-    if(response.ok) {
-        document.location.reload();
+    if (response.ok) {
+        alert('Edit made successfully.');
+        document.location.replace('/');
     } else {
-        alert(response.statusText);
+        const {message} = await response.json();
+        alert('Error: ' + message);
     }
-}
+};
 
-//event listener for add animal form
-document.querySelector(".update-form").addEventListener('submit', newAnimalFormHandler);
+document.querySelector('#edit-form').addEventListener('submit', editAnimalFormHandler);
